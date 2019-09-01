@@ -1,1 +1,1 @@
-"#mining-scripts" 
+Various osrs scripts XD
