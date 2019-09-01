@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7cebd92-d0b2-425b-94f2-2e278cc36bed" name="Default Changelist" comment="" />
+    <list default="true" id="a7cebd92-d0b2-425b-94f2-2e278cc36bed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/attack/AttackFarm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/tasks/Attack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/tasks/Eat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/tasks/Fish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/tasks/RunToArena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/GrandExchange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/QuickMining.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Walker$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Walker$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Walker$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Walker$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/Walker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/BankWalk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Drop$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Drop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/GEWalk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Mine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Mine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/MiningDeposit$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/MiningDeposit$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/MiningDeposit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Trade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/TradeDeposit$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/TradeDeposit$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/TradeDeposit$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/TradeDeposit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Withdraw$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Withdraw$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/osrs/tasks/Withdraw.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/GrandExchange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/GrandExchange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/QuickMining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/QuickMining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/Walker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/Walker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/BankWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/BankWalk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/Drop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/GEWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/GEWalk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/Mine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/Mine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/MiningDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/MiningDeposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/TradeDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/TradeDeposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/osrs/tasks/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/Withdraw.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="RSBot1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -15,7 +70,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Q6OoimPThRO9P7EpaoqfXMjhPy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -67,12 +128,26 @@
       <workItem from="1567088284852" duration="17154000" />
       <workItem from="1567173772678" duration="14972000" />
       <workItem from="1567262508010" duration="18319000" />
-      <workItem from="1567361793979" duration="1784000" />
+      <workItem from="1567361793979" duration="2384000" />
+      <workItem from="1567367300376" duration="6226000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

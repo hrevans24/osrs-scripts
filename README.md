@@ -1,1 +1,1 @@
-"#osrs-scripts" 
+"#mining-scripts" 
