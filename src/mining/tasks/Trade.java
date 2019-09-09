@@ -36,23 +36,6 @@ public class Trade extends Task {
         if (ctx.widgets.component(465, 24).component(48).click()) {
             Condition.sleep(700);
         }
-//        }else{
-//            MiningDeposit miningDeposit = new MiningDeposit(ctx);
-//            miningDeposit.execute();
-//            if(ctx.bank.close()){
-//                Condition.sleep(700);
-//            }
-//            if(ctx.npcs.select().id(GE_CLERKS).nearest().poll().interact("Exchange")){
-//                Condition.sleep(700);
-//            }
-//            if(ctx.widgets.component(465,6).component(1).click()){
-//                Condition.sleep(700);
-//            }
-//            if(ctx.widgets.component(465,2).component(11).click()){
-//                Condition.sleep(700);
-//            }
-//            miningDeposit.execute();
-//        }
             if (ctx.widgets.component(465, 24).component(50).click()) {
                 Condition.sleep(700);
             }

@@ -15,6 +15,12 @@ public class AttackFarm extends PollingScript<ClientContext> {
 
     @Override
     public void start(){
+        Task first = new LocationCheck(ctx);
+        if(first.activate()){
+            first.execute();
+        }
+        taskList.add(new GetEquipped(ctx));
+        taskList.add(new EquipmentWalk(ctx));
         taskList.add(new Fish(ctx));
         taskList.add(new Eat(ctx));
         taskList.add(new Attack(ctx));
