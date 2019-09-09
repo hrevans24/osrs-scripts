@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7cebd92-d0b2-425b-94f2-2e278cc36bed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/attack/Walker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/attack/tasks/EquipmentWalk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/attack/tasks/GetEquipped.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/attack/tasks/LocationCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/attack/AttackFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/AttackFarm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/attack/tasks/RunToArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/RunToArena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mining/tasks/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mining/tasks/Trade.java" afterDir="false" />
-    </list>
+    <list default="true" id="a7cebd92-d0b2-425b-94f2-2e278cc36bed" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +92,7 @@
       <workItem from="1567262508010" duration="18319000" />
       <workItem from="1567361793979" duration="2384000" />
       <workItem from="1567367300376" duration="6809000" />
-      <workItem from="1568050380414" duration="5903000" />
+      <workItem from="1568050380414" duration="6659000" />
     </task>
     <task id="LOCAL-00001" summary="Adding in another script for maxing attack. Still in early stages, not functional yet. Made some changes to the first script, primarily to the Trade class to make use of the notes aspect of banking so it doesn't take nearly as long.">
       <created>1567373721298</created>
@@ -110,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567373721298</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding in another script for maxing attack. Still in early stages, not functional yet. Made some changes to the first script, primarily to the Trade class to make use of the notes aspect of banking so it doesn't take nearly as long.">
+      <created>1568059354082</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568059354082</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Still working on attack script. Not functional yet.">
+      <created>1568059421315</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568059421315</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +136,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding in another script for maxing attack. Still in early stages, not functional yet. Made some changes to the first script, primarily to the Trade class to make use of the notes aspect of banking so it doesn't take nearly as long." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding in another script for maxing attack. Still in early stages, not functional yet. Made some changes to the first script, primarily to the Trade class to make use of the notes aspect of banking so it doesn't take nearly as long." />
+    <MESSAGE value="Still working on attack script. Not functional yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Still working on attack script. Not functional yet." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
