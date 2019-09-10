@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 
 public class Withdraw extends Task {
 
-    public static final Tile GE_LOCATION = new Tile(3165,3487,0);
+    public static final Tile GE_LOCATION = new Tile(3165, 3487, 0);
     public final int COPPER_ORE = 436;
 
     public Withdraw(ClientContext ctx) {
@@ -23,27 +23,27 @@ public class Withdraw extends Task {
 
     @Override
     public void execute() {
-        if(ctx.bank.opened()){
+        if (ctx.bank.opened()) {
             final int INVENTORY_COUNT = ctx.inventory.select().count();
-            if(ctx.widgets.component(12,25).click() && ctx.bank.select().id(COPPER_ORE).poll().interact("Withdraw-All")){
-                Condition.wait(new Callable<Boolean>(){
+            if (ctx.widgets.component(12, 25).click() && ctx.bank.select().id(COPPER_ORE).poll().interact("Withdraw-All")) {
+                Condition.wait(new Callable<Boolean>() {
                     @Override
                     public Boolean call() throws Exception {
-                        return ctx.inventory.select().count()>INVENTORY_COUNT;
+                        return ctx.inventory.select().count() > INVENTORY_COUNT;
                     }
                 }, 250, 20);
             }
             ctx.bank.close();
-        }else{
-            if(ctx.bank.inViewport()){
-                if(ctx.bank.open()){
-                    Condition.wait(new Callable<Boolean>(){
+        } else {
+            if (ctx.bank.inViewport()) {
+                if (ctx.bank.open()) {
+                    Condition.wait(new Callable<Boolean>() {
                         @Override
                         public Boolean call() throws Exception {
                             return ctx.bank.opened();
                         }
                     }, 250, 20);
-                }else{
+                } else {
                     ctx.camera.turnTo(ctx.bank.nearest());
                 }
             }

@@ -15,22 +15,22 @@ public class Eat extends Task {
 
     @Override
     public boolean activate() {
-        return getHealth()<5 && ctx.inventory.contains(ctx.inventory.select().id(EDIBLES).poll());
+        return getHealth() < 5 && ctx.inventory.contains(ctx.inventory.select().id(EDIBLES).poll());
     }
 
     @Override
     public void execute() {
-        if(ctx.game.tab().equals(Game.Tab.INVENTORY)) {
+        if (ctx.game.tab().equals(Game.Tab.INVENTORY)) {
             if (ctx.inventory.select().id(EDIBLES).poll().interact("Eat")) {
                 Condition.sleep(500);
             }
-        }else{
+        } else {
             ctx.game.tab(Game.Tab.INVENTORY);
             Condition.sleep(300);
         }
     }
 
-    private int getHealth(){
-        return Integer.parseInt(ctx.widgets.component(160,5).text());
+    private int getHealth() {
+        return Integer.parseInt(ctx.widgets.component(160, 5).text());
     }
 }

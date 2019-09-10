@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 
 public class Fish extends Task {
 
-    private final Tile FISHING_SPOT = new Tile(3244,3153,0);
+    private final Tile FISHING_SPOT = new Tile(3244, 3153, 0);
     private final int FISHING_LOC = 1530;
 
     public Fish(ClientContext ctx) {
@@ -19,14 +19,14 @@ public class Fish extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.inventory.select().count()<28 && ctx.players.local().tile().distanceTo(FISHING_SPOT)<6;
+        return ctx.inventory.select().count() < 28 && ctx.players.local().tile().distanceTo(FISHING_SPOT) < 6;
     }
 
     @Override
     public void execute() {
         Npc fishing = ctx.npcs.select().id(FISHING_LOC).nearest().poll();
         fishing.interact("Net");
-        Condition.wait(new Callable<Boolean>(){
+        Condition.wait(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
                 return ctx.players.local().animation() != -1;

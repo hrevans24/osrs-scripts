@@ -11,9 +11,10 @@ public class Drop extends Task {
 
     final static int COPPER_ORE = 436;
 
-    public Drop (ClientContext ctx){
+    public Drop(ClientContext ctx) {
         super(ctx);
     }
+
     @Override
     public boolean activate() {
         return ctx.inventory.select().count() > 27;
@@ -21,16 +22,16 @@ public class Drop extends Task {
 
     @Override
     public void execute() {
-        for(Item copperOre: ctx.inventory.select().id(COPPER_ORE)) {
+        for (Item copperOre : ctx.inventory.select().id(COPPER_ORE)) {
 
-            if (ctx.controller.isStopping()){
+            if (ctx.controller.isStopping()) {
                 break;
             }
 
             final int startCopper = ctx.inventory.select().id(COPPER_ORE).count();
             copperOre.interact("Drop", "Copper");
 
-            Condition.wait(new Callable<Boolean>(){
+            Condition.wait(new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
                     return ctx.inventory.select().id(COPPER_ORE).count() != startCopper;

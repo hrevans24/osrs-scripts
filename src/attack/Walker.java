@@ -1,4 +1,5 @@
 package attack;
+
 import org.powerbot.script.Condition;
 import org.powerbot.script.Random;
 import org.powerbot.script.Tile;
@@ -45,7 +46,7 @@ public class Walker {
                 }
                 index = i;                                                  //Suggested next tile was the best option as it is not very close, and reachable.
                 break;
-            } else if(t[i].distanceTo(p)<8){
+            } else if (t[i].distanceTo(p) < 8) {
                 index = i;                                                  //if next closest tile is <8 and it's not the next tile then we can assume the next tile is probably not correct, perhaps no reachable tile available...
                 break;
             }
@@ -82,7 +83,7 @@ public class Walker {
              * to filter objects by actions 'Climb-up' or 'Climb-down'
              */
             if (nextTile.floor() != p.tile().floor()) {
-                if (go.type() == GameObject.Type.INTERACTIVE && go.actions().length>0) {
+                if (go.type() == GameObject.Type.INTERACTIVE && go.actions().length > 0) {
                     if (nextTile.floor() > p.tile().floor()) {                      //Need to climb up.
                         if (calcDist < distance && reachable(go)) {
                             for (String s : go.actions()) {
@@ -105,7 +106,7 @@ public class Walker {
                         }
                     }
                 }
-            } else if (nextTile.distanceTo(ctx.players.local()) > 50){          //we can now assume that we need to go up or down .. not flawless whatsoever
+            } else if (nextTile.distanceTo(ctx.players.local()) > 50) {          //we can now assume that we need to go up or down .. not flawless whatsoever
                 if (go.type() != GameObject.Type.BOUNDARY) {
                     for (String s : go.actions()) {
                         if (go.tile().distanceTo(nextTile) + go.tile().distanceTo(p) < distance && reachable(go)) {
@@ -146,11 +147,11 @@ public class Walker {
                 if (obstacle.interact("Climb-down")) {
                     return handlePostInteraction();
                 }
-            } else if (nextTile.distanceTo(ctx.players.local()) > 50){                                      //This is just guessing
+            } else if (nextTile.distanceTo(ctx.players.local()) > 50) {                                      //This is just guessing
                 if (obstacle.interact("Climb-")) {
                     return handlePostInteraction();
                 }
-            }else {
+            } else {
                 if (obstacle.interact("Open")) {                                                        //Going through.
                     return handlePostInteraction();
                 }
@@ -216,9 +217,9 @@ public class Walker {
      */
     public boolean walkPath(Tile[] t) {
         Tile ti = getNextTile(t);
-        Tile nt = ti.derive(Random.nextInt(-1,1),Random.nextInt(-1,1));
+        Tile nt = ti.derive(Random.nextInt(-1, 1), Random.nextInt(-1, 1));
 
-        if(nt.matrix(ctx).reachable()){
+        if (nt.matrix(ctx).reachable()) {
             //System.out.println("Randomized.. " + ti + " became " + nt);
             return ctx.movement.step(nt);
         }
@@ -307,7 +308,7 @@ public class Walker {
      * @param t
      * @return
      */
-    public boolean walkPathReverse(Tile[] t){
+    public boolean walkPathReverse(Tile[] t) {
         t = ctx.movement.newTilePath(t).reverse().toArray();
 
         return walkPath(t);

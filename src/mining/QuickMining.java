@@ -13,47 +13,48 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Script.Manifest(name="Quick mining", description = "tutorial", properties = "client=4; author=hunter")
+@Script.Manifest(name = "Quick mining", description = "tutorial", properties = "client=4; author=hunter")
 public class QuickMining extends PollingScript<ClientContext> implements PaintListener {
 
     List<Task> taskList = new ArrayList<Task>();
     int startXP = 0;
 
     @Override
-    public void start(){
+    public void start() {
         String[] userOptions = {"Deposit", "Power Mine", "Bank"};
-        String userChoice = "" + (String)JOptionPane.showInputDialog(null, "Deposit, Power Mine, or Bank", "Quick Mining", JOptionPane.PLAIN_MESSAGE, null, userOptions, userOptions[1]);
+        String userChoice = "" + (String) JOptionPane.showInputDialog(null, "Deposit, Power Mine, or Bank", "Quick Mining", JOptionPane.PLAIN_MESSAGE, null, userOptions, userOptions[1]);
 
-        if(userChoice.equals("Deposit")){
+        if (userChoice.equals("Deposit")) {
             taskList.add(new MiningDeposit(ctx));
             taskList.add(new BankWalk(ctx));
-        }else if(userChoice.equals("Power Mine")){
+        } else if (userChoice.equals("Power Mine")) {
             taskList.add(new Drop(ctx));
             taskList.add(new BankWalk(ctx));
-        }else if(userChoice.equals("Bank")){
+        } else if (userChoice.equals("Bank")) {
             taskList.add(new Trade(ctx));
             taskList.add(new Withdraw(ctx));
             taskList.add(new GEWalk(ctx));
-        } else{
+        } else {
             ctx.controller.stop();
         }
         taskList.add(new Mine(ctx));
         startXP = ctx.skills.experience(Constants.SKILLS_MINING);
     }
+
     @Override
     public void poll() {
-        for(Task task: taskList){
-            if (ctx.controller.isStopping()){
+        for (Task task : taskList) {
+            if (ctx.controller.isStopping()) {
                 break;
             }
-            if(task.activate()) {
+            if (task.activate()) {
                 task.execute();
                 break;
             }
         }
     }
 
-//    @Override
+    //    @Override
     public void repaint(Graphics graphics) {
 //        long milliseconds = this.getTotalRuntime();
 //        long seconds = (milliseconds/1000) % 60;

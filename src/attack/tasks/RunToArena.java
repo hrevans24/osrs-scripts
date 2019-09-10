@@ -16,7 +16,7 @@ public class RunToArena extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(LUMBRIDGE_LOC)<6;
+        return ctx.players.local().tile().distanceTo(LUMBRIDGE_LOC) < 6;
     }
 
     @Override

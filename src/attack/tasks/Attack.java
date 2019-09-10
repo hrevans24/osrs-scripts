@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 
 public class Attack extends Task {
 
-    final Tile COW_ARENA = new Tile(3259,3271,0);
+    final Tile COW_ARENA = new Tile(3259, 3271, 0);
     final int[] COWS = {2790, 2791, 2792, 2793, 2794};
 
     public Attack(ClientContext ctx) {
@@ -19,23 +19,23 @@ public class Attack extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(COW_ARENA)<5 && getHealth() > 4;
+        return ctx.players.local().tile().distanceTo(COW_ARENA) < 5 && getHealth() > 4;
     }
 
     @Override
     public void execute() {
         Npc cow = ctx.npcs.select().id(COWS).nearest().poll();
-        if(cow.interact("Attack")){
-            Condition.wait(new Callable<Boolean>(){
+        if (cow.interact("Attack")) {
+            Condition.wait(new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
-                    return ctx.players.local().animation() != -1 || getHealth()<3;
+                    return ctx.players.local().animation() != -1 || getHealth() < 3;
                 }
             }, 2000, 10);
         }
     }
 
-    private int getHealth(){
-        return Integer.parseInt(ctx.widgets.component(160,5).text());
+    private int getHealth() {
+        return Integer.parseInt(ctx.widgets.component(160, 5).text());
     }
 }

@@ -13,9 +13,10 @@ public class Mine extends Task {
     final static int[] ROCK_IDS = {11161, 10943};
     Tile rockLocation = Tile.NIL;
 
-    public Mine(ClientContext ctx){
+    public Mine(ClientContext ctx) {
         super(ctx);
     }
+
     @Override
     public boolean activate() {
         return ctx.players.local().animation() == -1 || ctx.objects.select().at(rockLocation).id(ROCK_IDS).poll().equals(ctx.objects.nil());
@@ -27,7 +28,7 @@ public class Mine extends Task {
         rockLocation = rockToMine.tile();
         rockToMine.interact("Mine");
 
-        Condition.wait(new Callable<Boolean>(){
+        Condition.wait(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
                 return ctx.players.local().animation() != -1;

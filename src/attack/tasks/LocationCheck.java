@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 
 public class LocationCheck extends Task {
 
-    private final Tile CORRECT = new Tile(3222,3219,0);
+    private final Tile CORRECT = new Tile(3222, 3219, 0);
 
     public LocationCheck(ClientContext ctx) {
         super(ctx);
@@ -23,8 +23,8 @@ public class LocationCheck extends Task {
 
     @Override
     public void execute() {
-        if(ctx.magic.cast(Magic.Spell.HOME_TELEPORT)){
-            Condition.wait(new Callable<Boolean>(){
+        if (ctx.magic.cast(Magic.Spell.HOME_TELEPORT)) {
+            Condition.wait(new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
                     return ctx.players.local().animation() == -1;

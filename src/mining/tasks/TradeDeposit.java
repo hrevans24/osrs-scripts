@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 public class TradeDeposit extends Task {
 
     GrandExchange ge = new GrandExchange(ctx);
-    private final Tile GE_TILE =  new Tile(3165,3487,0);
+    private final Tile GE_TILE = new Tile(3165, 3487, 0);
 
     public TradeDeposit(ClientContext ctx) {
         super(ctx);
@@ -24,18 +24,18 @@ public class TradeDeposit extends Task {
 
     @Override
     public void execute() {
-        if(ge.opened()){
-            Condition.wait(new Callable<Boolean>(){
+        if (ge.opened()) {
+            Condition.wait(new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
                     return ge.close();
                 }
             }, 25, 20);
         }
-        if(ctx.bank.opened()){
+        if (ctx.bank.opened()) {
             final int INVENTORY_COUNT = ctx.inventory.select().count();
-            if(ctx.bank.depositInventory()){
-                Condition.wait(new Callable<Boolean>(){
+            if (ctx.bank.depositInventory()) {
+                Condition.wait(new Callable<Boolean>() {
                     @Override
                     public Boolean call() throws Exception {
                         return ctx.inventory.select().count() != INVENTORY_COUNT;
@@ -43,17 +43,17 @@ public class TradeDeposit extends Task {
                 }, 250, 20);
             }
             ctx.bank.close();
-        }else{
-            if(ctx.bank.inViewport()){
-                if(ctx.bank.open()){
-                    Condition.wait(new Callable<Boolean>(){
+        } else {
+            if (ctx.bank.inViewport()) {
+                if (ctx.bank.open()) {
+                    Condition.wait(new Callable<Boolean>() {
                         @Override
                         public Boolean call() throws Exception {
                             return ctx.bank.opened();
                         }
                     }, 250, 20);
                 }
-            }else{
+            } else {
                 ctx.camera.turnTo(ctx.bank.nearest());
             }
         }

@@ -8,7 +8,7 @@ import mining.Task;
 
 public class Trade extends Task {
 
-    private Tile geLocation = new Tile(3165,3487,0);
+    private Tile geLocation = new Tile(3165, 3487, 0);
     final static int[] GE_CLERKS = {2148, 2149};
     private final int COPPER_ORE_NOTE = 437;
     private Item item;
@@ -36,14 +36,14 @@ public class Trade extends Task {
         if (ctx.widgets.component(465, 24).component(48).click()) {
             Condition.sleep(700);
         }
-            if (ctx.widgets.component(465, 24).component(50).click()) {
-                Condition.sleep(700);
-            }
-            if (ctx.widgets.component(465, 24).component(54).click()) {
-                Condition.sleep(700);
-            }
-            if (ctx.widgets.component(465, 2).component(11).click()) {
-                Condition.sleep(700);
-            }
+        if (ctx.widgets.component(465, 24).component(50).click()) {
+            Condition.sleep(700);
+        }
+        if (ctx.widgets.component(465, 24).component(54).click()) {
+            Condition.sleep(700);
+        }
+        if (ctx.widgets.component(465, 2).component(11).click()) {
+            Condition.sleep(700);
+        }
     }
 }
