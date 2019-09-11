@@ -18,6 +18,8 @@ public class GetEquipped extends Task {
     private final int SWORD = 1277;
     private final int NET = 303;
     private final int SHIELD = 1171;
+    private final int MATCHES = 590;
+    private final int AXE = 1351;
     private final Tile LUMBRIDGE = new Tile(3222, 3219, 0);
     public static final Tile[] path = {new Tile(3222, 3219, 0), new Tile(3218, 3219, 0), new Tile(3215, 3216, 0), new Tile(3215, 3212, 0), new Tile(3211, 3211, 0), new Tile(3207, 3210, 0), new Tile(3205, 3209, 1), new Tile(3205, 3209, 2), new Tile(3205, 3213, 2), new Tile(3206, 3217, 2), new Tile(3209, 3220, 2)};
     private Equipment.Slot[] slots = Equipment.Slot.values();
@@ -28,7 +30,7 @@ public class GetEquipped extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(ctx.bank.nearest().tile()) < 6 && (ctx.inventory.id(NET).count() != 1 || ctx.inventory.select().count() > 1);
+        return ctx.players.local().tile().distanceTo(ctx.bank.nearest().tile()) < 6 && (ctx.inventory.id(NET).count() != 1 || ctx.inventory.select().count() > 3);
     }
 
     @Override
@@ -50,6 +52,21 @@ public class GetEquipped extends Task {
                             return ctx.inventory.select().count() != INVENTORY_COUNT;
                         }
                     }, 250, 20);
+                    if(ctx.bank.withdraw(SWORD, 1)){
+                        Condition.sleep(500);
+                    }if(ctx.bank.withdraw(SHIELD, 1)){
+                        Condition.sleep(500);
+                    }if(ctx.bank.withdraw(NET, 1)){
+                        Condition.sleep(500);
+                    }if(ctx.bank.withdraw(MATCHES, 1)){
+                        Condition.sleep(500);
+                    }if(ctx.bank.withdraw(AXE, 1)){
+                        Condition.sleep(500);
+                    }
+                    if(ctx.bank.close()){
+                        equip();
+                        return;
+                    }
                 }
             } else {
                 if (ctx.bank.inViewport()) {
@@ -70,9 +87,17 @@ public class GetEquipped extends Task {
                 Condition.sleep(500);
             }
         }
-        if(ctx.inventory.id(SWORD).count() == 1 && ctx.inventory.id(SHIELD).count() == 1 && ctx.inventory.id(NET).count() == 1){
-            ctx.inventory.id(SWORD).poll().interact("Wield");
-            ctx.inventory.id(SHIELD).poll().interact("Wield");
+    }
+
+    private void equip(){
+        if(ctx.game.tab(Game.Tab.INVENTORY)) {
+            Condition.sleep(300);
+        }
+        if(ctx.inventory.select().id(SHIELD).poll().interact("Wield")){
+            Condition.sleep(300);
+        }
+        if(ctx.inventory.select().id(SWORD).poll().interact("Wield")){
+            Condition.sleep(300);
         }
     }
 }

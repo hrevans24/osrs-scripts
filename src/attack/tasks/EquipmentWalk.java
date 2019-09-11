@@ -7,6 +7,8 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Equipment;
 
+import java.util.ArrayList;
+
 public class EquipmentWalk extends Task {
 
     private final int SWORD = 1277;
@@ -24,11 +26,11 @@ public class EquipmentWalk extends Task {
 
     @Override
     public boolean activate() {
-        return ((ctx.equipment.itemAt(Equipment.Slot.MAIN_HAND).id() != SWORD && ctx.inventory.id(SWORD).count() != 1)
-                || (ctx.equipment.itemAt(Equipment.Slot.OFF_HAND).id() != SHIELD && ctx.inventory.id(SHIELD).count() != 1)
-                || ctx.inventory.id(NET).count() != 1
-                || ctx.inventory.id(MATCHES).count() != 1
-                || ctx.inventory.id(AXE).count() != 1) && path[0].distanceTo(ctx.players.local()) > 6;
+        return !ctx.equipment.contains( ctx.inventory.id(SWORD).poll())
+                || !ctx.equipment.contains(ctx.inventory.id(SHIELD).poll())
+                || ctx.inventory.select().id(NET).count() != 1
+                || ctx.inventory.select().id(MATCHES).count() != 1
+                || ctx.inventory.select().id(AXE).count() != 1;
     }
 
     @Override
