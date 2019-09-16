@@ -25,12 +25,13 @@ public class Fish extends Task {
     @Override
     public void execute() {
         Npc fishing = ctx.npcs.select().id(FISHING_LOC).nearest().poll();
-        fishing.interact("Net");
-        Condition.wait(new Callable<Boolean>() {
-            @Override
-            public Boolean call() throws Exception {
-                return ctx.players.local().animation() != -1;
-            }
-        }, 200, 10);
+        if(fishing.interact("Net")){
+            Condition.wait(new Callable<Boolean>() {
+                @Override
+                public Boolean call() throws Exception {
+                    return ctx.players.local().animation() == -1;
+                }
+            }, 2000, 5);
+        }
     }
 }

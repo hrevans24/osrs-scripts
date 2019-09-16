@@ -30,7 +30,7 @@ public class GetEquipped extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(ctx.bank.nearest().tile()) < 6 && (ctx.inventory.id(NET).count() != 1 || ctx.inventory.select().count() > 3);
+        return ctx.players.local().tile().distanceTo(ctx.bank.nearest().tile()) < 6 && (!equipped() || ctx.inventory.select().count() != 3);
     }
 
     @Override
@@ -65,7 +65,6 @@ public class GetEquipped extends Task {
                     }
                     if(ctx.bank.close()){
                         equip();
-                        return;
                     }
                 }
             } else {
@@ -99,5 +98,9 @@ public class GetEquipped extends Task {
         if(ctx.inventory.select().id(SWORD).poll().interact("Wield")){
             Condition.sleep(300);
         }
+    }
+
+    private boolean equipped(){
+        return ctx.equipment.itemAt(Equipment.Slot.MAIN_HAND).id() == SWORD && ctx.equipment.itemAt(Equipment.Slot.OFF_HAND).id() == SHIELD;
     }
 }

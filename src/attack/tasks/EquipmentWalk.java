@@ -26,11 +26,10 @@ public class EquipmentWalk extends Task {
 
     @Override
     public boolean activate() {
-        return !ctx.equipment.contains( ctx.inventory.id(SWORD).poll())
-                || !ctx.equipment.contains(ctx.inventory.id(SHIELD).poll())
-                || ctx.inventory.select().id(NET).count() != 1
+        return  ((ctx.inventory.select().id(NET).count() != 1
                 || ctx.inventory.select().id(MATCHES).count() != 1
-                || ctx.inventory.select().id(AXE).count() != 1;
+                || ctx.inventory.select().id(AXE).count() != 1)
+                || !equipped()) || (equipped() && ctx.inventory.select().count() == 3);
     }
 
     @Override
@@ -39,7 +38,15 @@ public class EquipmentWalk extends Task {
             ctx.movement.running(true);
         }
         if (!ctx.players.local().inMotion() || ctx.movement.destination().equals(Tile.NIL) || ctx.movement.destination().distanceTo(ctx.players.local()) < 5) {
-            walker.walkPath(path);
+            if(!equipped()) {
+                walker.walkPath(path);
+            }else{
+                walker.walkPathReverse(path);
+            }
         }
+    }
+
+    private boolean equipped(){
+        return ctx.equipment.itemAt(Equipment.Slot.MAIN_HAND).id() == SWORD && ctx.equipment.itemAt(Equipment.Slot.OFF_HAND).id() == SHIELD;
     }
 }
