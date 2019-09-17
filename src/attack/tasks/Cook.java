@@ -5,7 +5,6 @@ import org.powerbot.script.Condition;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Game;
 import org.powerbot.script.rt4.GameObject;
-import org.powerbot.script.rt4.Widget;
 
 import java.util.concurrent.Callable;
 

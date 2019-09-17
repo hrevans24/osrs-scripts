@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7cebd92-d0b2-425b-94f2-2e278cc36bed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/attack/tasks/Cook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/attack/tasks/WoodCut.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/attack/AttackFarm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/AttackFarm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Attack$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Attack$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Attack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Attack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Cook$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Cook$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Cook$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Cook$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Cook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Cook.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/attack/tasks/EquipmentWalk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/EquipmentWalk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Fish$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Fish$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/attack/tasks/Fish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/Fish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/attack/tasks/GetEquipped$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/GetEquipped$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/attack/tasks/GetEquipped.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/attack/tasks/GetEquipped.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/attack/AttackFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/AttackFarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/attack/tasks/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/Attack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/attack/tasks/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/Cook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/attack/tasks/EquipmentWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/EquipmentWalk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/attack/tasks/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/attack/tasks/GetEquipped.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/attack/tasks/GetEquipped.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +111,7 @@
       <workItem from="1568226502778" duration="4801000" />
       <workItem from="1568308459593" duration="1937000" />
       <workItem from="1568647716307" duration="9088000" />
+      <workItem from="1568742189415" duration="1769000" />
     </task>
     <task id="LOCAL-00001" summary="Adding in another script for maxing attack. Still in early stages, not functional yet. Made some changes to the first script, primarily to the Trade class to make use of the notes aspect of banking so it doesn't take nearly as long.">
       <created>1567373721298</created>

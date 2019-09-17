@@ -17,12 +17,13 @@ public class AttackFarm extends PollingScript<ClientContext> {
 
     @Override
     public void start() {
+        taskList.add(new Attack(ctx));
+        taskList.add(new WoodCut(ctx));
         taskList.add(new Cook(ctx));
         taskList.add(new GetEquipped(ctx));
         taskList.add(new EquipmentWalk(ctx));
         taskList.add(new Fish(ctx));
         taskList.add(new Eat(ctx));
-        taskList.add(new Attack(ctx));
     }
 
     @Override

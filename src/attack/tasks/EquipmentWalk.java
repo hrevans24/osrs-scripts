@@ -7,8 +7,6 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Equipment;
 
-import java.util.ArrayList;
-
 public class EquipmentWalk extends Task {
 
     private final int SWORD = 1277;

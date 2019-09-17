@@ -19,7 +19,7 @@ public class Attack extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(COW_ARENA) < 5 && getHealth() > 4;
+        return ctx.players.local().tile().distanceTo(COW_ARENA) < 8 && getHealth() > 4;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Attack extends Task {
             Condition.wait(new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
-                    return ctx.players.local().animation() != -1 || getHealth() < 3;
+                    return ctx.players.local().animation() != -1 || getHealth() < 4;
                 }
             }, 2000, 10);
         }
