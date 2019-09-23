@@ -17,19 +17,21 @@ public class AttackFarm extends PollingScript<ClientContext> {
 
     @Override
     public void start() {
+        taskList.add(new EquipmentWalk(ctx));
+        taskList.add(new GetEquipped(ctx));
+        taskList.add(new RunToArena(ctx));
         taskList.add(new Attack(ctx));
+        taskList.add(new Eat(ctx));
+        taskList.add(new FishRun(ctx));
+        taskList.add(new Fish(ctx));
         taskList.add(new WoodCut(ctx));
         taskList.add(new Cook(ctx));
-        taskList.add(new GetEquipped(ctx));
-        taskList.add(new EquipmentWalk(ctx));
-        taskList.add(new Fish(ctx));
-        taskList.add(new Eat(ctx));
     }
 
     @Override
     public void poll() {
         if(first.activate() && flag){
-//            first.execute();
+            first.execute();
             flag = false;
         }else{
             for(Task task : taskList){
