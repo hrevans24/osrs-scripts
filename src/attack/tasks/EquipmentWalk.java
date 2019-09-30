@@ -24,6 +24,8 @@ public class EquipmentWalk extends Task {
 
     @Override
     public boolean activate() {
+        System.out.println((ctx.inventory.select().id(NET).count() != 1) + "\n" + (ctx.inventory.select().id(MATCHES).count() != 1) + "\n" + (ctx.inventory.select().id(AXE).count() != 1) + "\n"
+        + (!equipped()) + "\n" + ctx.inventory.select().count());
         return  ((ctx.inventory.select().id(NET).count() != 1
                 || ctx.inventory.select().id(MATCHES).count() != 1
                 || ctx.inventory.select().id(AXE).count() != 1)

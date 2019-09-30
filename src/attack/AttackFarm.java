@@ -39,6 +39,7 @@ public class AttackFarm extends PollingScript<ClientContext> {
                     break;
                 }
                 if(task.activate()){
+                    System.out.println(task);
                     task.execute();
                     break;
                 }
